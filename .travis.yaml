@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node mubarak23/travis_ci:latest
+  - docker build -t travisCIUdacity .
+  - docker tag simple-node mubarak23/travisCIUdacity:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push mubarak23/travis_ci
+  - docker push mubarak23/travisCIUdacity
